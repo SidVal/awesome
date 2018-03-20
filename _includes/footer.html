@@ -56,7 +56,18 @@ var myList = document.querySelector('#repos');
 var myRequest = new Request('https://api.github.com/search/repositories?q=topic:awesome-list&sort=updated&order=desc');
 fetch(myRequest)
 .then(function(response) { return response.json(); })
-        $.getJSON(myRequest, function (result) {
+.then(function(data)
+{
+for (var i = 0; i < data.items.length; i++) {
+var listItem = document.createElement('li');
+	listItem.className = 'repo grid-1 ' + data.items[i].language;
+listItem.innerHTML = '<a href="' + data.items[i].html_url + '"><h2>' + data.items[i].full_name + '</h2><h3>' + 
+					data.items[i].language + '</h3><p>' + data.items[i].description + '</p></a>';
+myList.appendChild(listItem);
+}
+}
+);
+        $.getJSON(listItem, function (result) {
           if (result.data && result.data.length > 0) {
             repos = repos.concat(result.data);
             addRepos(repos, page + 1);
@@ -97,19 +108,6 @@ fetch(myRequest)
             });
           }
         });
-/* 
-.then(function(data)
-{
-for (var i = 0; i < data.items.length; i++) {
-var listItem = document.createElement('li');
-	listItem.className = 'repo grid-1 ' + data.items[i].language;
-listItem.innerHTML = '<a href="' + data.items[i].html_url + '"><h2>' + data.items[i].full_name + '</h2><h3>' + 
-					data.items[i].language + '</h3><p>' + data.items[i].description + '</p></a>';
-myList.appendChild(listItem);
-}
-}
-);
-*/
 }
 addRepos();
 	  
