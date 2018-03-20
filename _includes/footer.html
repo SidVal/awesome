@@ -67,13 +67,7 @@ myList.appendChild(listItem);
 }
 }
 );
-        $.getJSON(listItem, function (result) {
-          if (result.data && result.data.length > 0) {
-            repos = repos.concat(result.data);
-            addRepos(repos, page + 1);
-          }
-          else {
-            $(function () {
+$(function () {
               $("#num-repos").text(repos.length);
               // Convert pushed_at to Date.
               $.each(repos, function (i, repo) {
@@ -106,8 +100,6 @@ myList.appendChild(listItem);
               });
               listOfRepos = repos;
             });
-          }
-        });
 }
 addRepos();
 	  
