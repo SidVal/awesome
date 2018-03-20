@@ -21,6 +21,7 @@
         "docs": "AmpProject.org repo =)",
         "csap": "Consultoria-SAP's Project"
       };
+      
       /* Global Search Result, updated only once after fetching repos from api.github.com */
       var listOfRepos = [];
       function repoDescription(repo) {
@@ -48,10 +49,10 @@
         $link.append($("<p>").text(repoDescription(repo)));
         $item.appendTo("#repos");
       }
-      function addRepos(repos, page) {
+    /*  function addRepos(repos, page) {
         repos = repos || [];
         page = page || 1;
-        var uri = "https%3A%2F%2Fapi.github.com%2Fsearch%2Frepositories%3Fq%3Dtopic%3Aawesome-list?callback=?"
+        var uri = "https://api.github.com/users/sidval/repos?callback=?"
                 + "&per_page=100"
                 + "&page="+page;
         $.getJSON(uri, function (result) {
@@ -97,11 +98,12 @@
         });
       }
       addRepos();
-      //get total number of Awesome members
+	  */
+      //get total number of Twitter members
       function getNumMembers(page, numMembers) {
         var page = page || 1;
         var numMembers = numMembers || 0;
-        var membersUri = "https://api.github.com/orgs/awesome-lists/members?callback=?"
+        var membersUri = "https://api.github.com/orgs/consultoria-sap/members?callback=?"
           + "&per_page=100"
           + "&page="+page;
         $.getJSON(membersUri, function (result) {
