@@ -2,7 +2,6 @@
 <script type="text/javascript" src="assets/js/strftime.js"></script>
 <script type="text/javascript" src="assets/js/fuse.min.js"></script>
 
-
     <script type="text/javascript">
     (function ($, undefined) {
       // Put custom repo URL's in this object, keyed by repo name.
@@ -49,6 +48,25 @@
         $link.append($("<p>").text(repoDescription(repo)));
         $item.appendTo("#repos");
       }
+
+function addRepos(repos, page) {	  
+        repos = repos || [];
+        page = page || 1;
+var myList = document.querySelector('#repos');
+var myRequest = new Request('https://api.github.com/search/repositories?q=topic:awesome-list&sort=updated&order=desc');
+fetch(myRequest)
+.then(function(response) { return response.json(); })
+.then(function(data) {
+for (var i = 0; i < data.items.length; i++) {
+var listItem = document.createElement('li');
+	listItem.className = 'repo grid-1 ' + data.items[i].language;
+listItem.innerHTML = '<a href="' + data.items[i].html_url + '"><h2>' + data.items[i].full_name + '</h2><h3>' + 
+					data.items[i].language + '</h3><p>' + data.items[i].description + '</p></a>';
+myList.appendChild(listItem);
+}
+});
+}
+	  
     /*  function addRepos(repos, page) {
         repos = repos || [];
         page = page || 1;
@@ -103,7 +121,7 @@
       function getNumMembers(page, numMembers) {
         var page = page || 1;
         var numMembers = numMembers || 0;
-        var membersUri = "https://api.github.com/orgs/consultoria-sap/members?callback=?"
+        var membersUri = "https://api.github.com/orgs/awesome-lists/members?callback=?"
           + "&per_page=100"
           + "&page="+page;
         $.getJSON(membersUri, function (result) {
@@ -228,7 +246,6 @@
       }
     })(jQuery);
     </script>
-
 
   </body>
 </html>
