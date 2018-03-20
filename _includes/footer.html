@@ -4,6 +4,7 @@
 
 
     <script type="text/javascript">
+        /* OLR
     (function ($, undefined) {
       // Put custom repo URL's in this object, keyed by repo name.
       var repoUrls = {
@@ -21,6 +22,7 @@
         "docs": "AmpProject.org repo =)",
         "csap": "Consultoria-SAP's Project"
       };
+      ** OLR fin */ 
       /* Global Search Result, updated only once after fetching repos from api.github.com */
       var listOfRepos = [];
       function repoDescription(repo) {
@@ -182,12 +184,12 @@
         }
         return opacity;
       }
-      /* function makeLarry(sizeName, speed) {
+      function makeLarry(sizeName, speed) {
         var size = sizeDimensions[sizeName];
         var top = Math.floor((flyzone().height() - size) * Math.random());
         var $img = $("<img>")
           .addClass("larry size-" + sizeName)
-          .attr("src", "assets/larry.png")
+          .attr("src", "assets/img/larry.png")
           .attr("width", size)
           .attr("height", size)
           .css({
@@ -204,7 +206,7 @@
         });
         return $img;
       }
-      */
+      
       function makeRandomLarry() {
         var size = randomItem(sizes);
         var speed = Math.floor(Math.random() * 20000) + 15000;
