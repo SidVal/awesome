@@ -52,17 +52,12 @@
 function addRepos(repos, page) {	  
         repos = repos || [];
         page = page || 1;
-var myList = document.querySelector('#repos');
+	
 var myRequest = new Request('https://api.github.com/search/repositories?q=topic:awesome-list&sort=updated&order=desc');
 fetch(myRequest)
 .then(function(response)
       { var json1 = response.json(); 
-        $.getJSON(json1, function (result) {
-          if (result.data && result.data.length > 0) {
-            repos = repos.concat(result.data);
-            addRepos(repos, page + 1);
-          }
-          else {
+        $.getJSON(json1, function (result) { 
             $(function () {
               $("#num-repos").text(repos.length);
               // Convert pushed_at to Date.
@@ -96,9 +91,9 @@ fetch(myRequest)
               });
               listOfRepos = repos;
             });
-          }
+          
         });
-       })
+		})
 }
 addRepos();
 	  
