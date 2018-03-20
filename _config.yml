@@ -1,7 +1,7 @@
 # Dependencies
 markdown: kramdown
 highlighter: rouge
-theme: jekyll-theme-so-simple
+theme: minima
 
 #  Build
 title: Awesome Love for the awesome lists !
