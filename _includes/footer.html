@@ -52,7 +52,7 @@
         repos = repos || [];
         page = page || 1;
         var uri = "https://api.github.com/users/sidval/repos?callback=?"
-                + "&per_page=100"
+                + "&per_page=10"
                 + "&page="+page;
         $.getJSON(uri, function (result) {
           if (result.data && result.data.length > 0) {
