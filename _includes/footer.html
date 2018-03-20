@@ -66,8 +66,10 @@ myList.appendChild(listItem);
 }
 });
 
-		var myList = document.querySelector('#repos');
-        $.getJSON(myList, function (result) {
+        var uri = "https://api.github.com/search/repositories?q=topic:awesome-list&sort=updated&order=desc"
+                + "&per_page=100"
+                + "&page="+page;
+        $.getJSON(uri, function (result) {
           if (result.data && result.data.length > 0) {
             repos = repos.concat(result.data);
             addRepos(repos, page + 1);
