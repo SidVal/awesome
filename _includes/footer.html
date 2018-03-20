@@ -56,8 +56,7 @@ var myList = document.querySelector('#repos');
 var myRequest = new Request('https://api.github.com/search/repositories?q=topic:awesome-list&sort=updated&order=desc');
 fetch(myRequest)
 .then(function(response) { return response.json(); })
-.then(function(data)
-        $.getJSON(uri, function (result) {
+        $.getJSON(myRequest, function (result) {
           if (result.data && result.data.length > 0) {
             repos = repos.concat(result.data);
             addRepos(repos, page + 1);
@@ -99,6 +98,7 @@ fetch(myRequest)
           }
         });
 /* 
+.then(function(data)
 {
 for (var i = 0; i < data.items.length; i++) {
 var listItem = document.createElement('li');
