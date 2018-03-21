@@ -9,11 +9,9 @@ description: Awesome Love for the awesome lists !
 # google_analytics: xx-xxxxxxx
 # avatar: https://avatars2.githubusercontent.com/u/23317692?v=3&u=3319301a436f2b42d9c4fa89370ddc2e40c0feea
 # permalink: /:categories/:title.html
-# baseurl: /ABAP
+# baseurl: /awesome
 url: https://sidval.github.io/awesome/
 timezone: America/Argentina/Buenos_Aires
 excerpt_separator: <!--more-->
 gems:
   - jekyll-sitemap
-  - jemoji
-
