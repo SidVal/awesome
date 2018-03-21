@@ -219,14 +219,4 @@ addRepos();
       }
     })(jQuery); 
 
-(function($, win){
-function externalLink() {
-      $('a[href^="http"]').attr('target','_blank');
-      $('a[href^="//"]').attr('target','_blank');
-      $('a[href^="'+ window.location.origin +'"]').attr('target','_blank');
-    }
-
-externalLink();
-})(jQuery, window);
-	    
     </script>
