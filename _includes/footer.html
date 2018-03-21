@@ -6,14 +6,14 @@
 (function ($, undefined) {
       // Put custom repo URL's in this object, keyed by repo name.
       var repoUrls = {
-        "awesome-linux": "https://github.com/SidVal/discourse-data-explorer/tree/queries"
+        "awesome": "https://sidval.github.io/awesome/"
       };
       function repoUrl(repo) {
         return repoUrls[repo.name] || repo.html_url;
       }
       // Put custom repo descriptions in this object, keyed by repo name.
       var repoDescriptions = {
-        "awesome-opensource-apps": "AmpProject.org repo =)"
+        "awesome-opensource-apps": "test description :tada: emoji"
       };
       
       /* Global Search Result, updated only once after fetching repos from api.github.com */
