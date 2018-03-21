@@ -29,7 +29,7 @@
         $link.append($("<p>").text(repoDescription(repo)));
         $item.appendTo("#repos");
       }
-			function addRecentlyUpdatedRepo(repo) {
+	function addRecentlyUpdatedRepo(repo) {
         var $item = $("<li>");
         var $name = $("<a>").attr("href", repo.html_url).text(repo.name);
         $item.append($("<span>").addClass("name").append($name));
@@ -219,11 +219,4 @@ addRepos();
       }
     })(jQuery); 
 	    
-jQuery(document).ready(function(){
-externo();
-});
-function externo(){
-$('a[href^="http://"], a[href^="https://"]').not('a[href*=sidval]').attr('target','_blank');
-}
-
     </script>
