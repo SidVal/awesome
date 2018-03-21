@@ -59,7 +59,9 @@ fetch(myRequest)
 .then(function(data) {
 	for (
 		var data1 = data.items;
-		var i = 0; i < data1.length; i++) {
+		console.log(data1);
+		var i = 0; i < data.items.length; i++) {
+		console.log(data.items.length);
               $("#num-repos").text(data1.length);
               // Convert pushed_at to Date.
               $.each(data1, function (i, repo) {
